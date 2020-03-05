@@ -97,10 +97,11 @@ app.delete("/api/notes/:id", function(req, res) {
 
     fs.writeFile('./db/db.json', JSON.stringify(result), 'utf8', (err, data) => {
         if (err) throw err;
+        res.sendFile(__dirname + '/db/db.json');
+
     } )
     })
     
-    res.sendfile('./db/db.json');
 })
 
 
